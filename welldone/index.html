@@ -11,6 +11,9 @@
         padding: 0;
         margin: 0;
       }
+      html {
+        font-family: "Courier New", Courier, monospace;
+      }
       html,
       body {
         height: 100%;
@@ -25,10 +28,32 @@
         }
       }
     </style>
+    <script type="module">
+      const q = new URLSearchParams(location.search);
+      const answer = q.get("answer");
+      document.querySelector(
+        "table tbody tr:not(:first-child) td"
+      ).textContent = answer;
+    </script>
   </head>
-  <body style="display: flex">
-    <h1 class="yay" style="margin: auto; font-size: clamp(4rem, 24vmin, 30rem)">
+  <body style="display: flex; flex-direction: column">
+    <h1 class="yay" style="margin: auto; font-size: clamp(4rem, 8vmin, 8rem)">
       great job
     </h1>
+    <table
+      style="margin-bottom: auto; text-align: left; border-collapse: collapse"
+    >
+      <thead style="text-align: center; border-bottom: 2px black solid">
+        <th>results</th>
+      </thead>
+      <tbody>
+        <tr>
+          <th>answer</th>
+        </tr>
+        <tr>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
   </body>
 </html>
